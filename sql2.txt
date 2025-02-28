@@ -1,0 +1,85 @@
+--create view calender
+
+create view gold.calender
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Calendar',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+--create view customer
+
+create view gold.ccustomer
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Customers',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+--create view AdventureWorks_Product_Categories
+create view gold.procat 
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Product_Categories',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+--create view AdventureWorks_Product_Subcategories
+
+create view gold.prosubcat
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Product_Subcategories',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+--create view AdventureWorks_Products
+create view gold.pro 
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Products',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+--create view AdventureWorks_Returns
+create view gold.ret
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Returns',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+
+--create view AdventureWorks_Sales
+
+create view gold.sales
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Sales',
+    FORMAT= 'PARQUET'
+   )as QUER1
+
+
+--create view AdventureWorks_Territories
+create view gold.ter
+AS 
+select *
+from 
+   OPENROWSET(
+    BULK 'https://awstorage9620.blob.core.windows.net/silvercontainer/AdventureWorks_Territories',
+    FORMAT= 'PARQUET'
+   )as QUER1
